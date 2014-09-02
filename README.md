@@ -1,6 +1,6 @@
 nodejs-update-app-gracefully
 ============================
-目前在開發的系統是需要提供長連結的 socket server，利用 cluster 來善用多核心，假設一台 8 核心的 server 可供 30 萬 clients 連線，換版的時候必須要停下 nodejs 城式重新啟動，但目前的架構是在連進這個系統之前，必須到 web server 去要求一些 web service，如果同時有 30 萬個 request 去灌 web server，勢必會對 web server 提供的其他服務造成壓力。
+目前在開發的系統是需要提供長連結的 socket server，利用 cluster 來善用多核心，假設一台 8 核心的 server 可供 30 萬 clients 連線，換版的時候必須要停下 nodejs 程式重新啟動，但目前的架構是在連進這個系統之前，必須到 web server 去要求一些 web service，如果同時有 30 萬個 request 去灌 web server，勢必會對 web server 提供的其他服務造成壓力。
 
 這時候就可以利用 cluster 的功能去做到優雅的換版。
 
